@@ -1,2 +1,2 @@
-# connecting
+# connect
 Created with CodeSandbox
