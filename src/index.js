@@ -8,8 +8,8 @@ import Post from "./components/Post";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
-    <Get />
     <Post />
+    <Get />
   </StrictMode>,
   rootElement
 );
