@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 // import Axios from "axios";
-
+// import axios from "axios";
+// Axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
+// Axios.defaults.headers.common["Content-type"] =
+//   "application/x-www-form-urlencoded";
 function Post() {
-  const url = "https://webhook.site/abfbd4de-3a27-45d4-b08d-47cb888888e6";
+  const url = "https://woolly-joyous-pisces.glitch.me/api/test1";
   const [data, setData] = useState({
     name: ""
   });
@@ -11,22 +14,38 @@ function Post() {
     e.preventDefault();
     let res = await fetch(url, {
       method: "post",
-      mode: "no-cors",
+      // mode: "no-cors",
       headers: {
-        Accept: "application/json",
-        "Content-type": "application/json"
+        Accept: "*/*",
+        "Content-type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify({
-        name: data.name
+        key_test: "kkkkkk"
       })
     });
-    console.log(res);
+    console.log(res.body);
+
+    // Axios({
+    //   method: "post",
+    //   url: url,
+    //   data: {
+    //     ket: "jkkk"
+    //   }
+    // })
+    //   .then((data) => console.log(data))
+    //   .catch((e) => console.log(e));
 
     // Axios.post(url, {
-    //   name: data.name
-    // }).then((res) => {
-    //   console.log(res.data);
-    // });
+    //   Name: data.name
+    // })
+    //   .then((res) => {
+    //     console.log(res);
+    //     // console.log(res.data);
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //   });
     // console.log(JSON.stringify(data));
   }
 
