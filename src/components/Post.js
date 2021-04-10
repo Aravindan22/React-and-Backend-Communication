@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 var qs = require('qs');
+
 function Post() {
   const url = "https://woolly-joyous-pisces.glitch.me/api/test1";
   const [data, setData] = useState({
@@ -24,8 +25,8 @@ function Post() {
     Axios(config)
     .then(function (response) {
         let res =JSON.stringify(response.data) 
-    console.log(res);
-    window.alert(res);
+        console.log(res);
+        window.alert(res);
     })
     .catch(function (error) {
     console.log(error);
